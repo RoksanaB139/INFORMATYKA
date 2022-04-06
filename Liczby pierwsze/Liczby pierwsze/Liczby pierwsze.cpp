@@ -5,19 +5,27 @@ using namespace std;
 int main()
 {
 	int lp = 0;//liczby pierwsze
-	int p;//testowane liczby
+	int p=2;//testowane liczby
 	int n;//ilość liczb
 	int d;//dzielniki
+	bool x;
 
 	cout << "podaj liczbe" << endl;
 	cin >> n;
 
-	cout << 'yyy' << endl;
-	cin >> d;
-
-	for (int p = 2; p <= 100; p++) {
-		if (p % d == 0) {
-			p = p + 1;
+	
+	while (lp < n) {
+		x = true;
+		for (int d = 2; d <= p-1; d++) {
+			if (p % d == 0) {
+				x = false;
+			}
 		}
-	} while (lp < n);
+		if(x==true){
+			cout << " " << p;
+			lp = lp + 1;
+		}
+		p = p + 1;
+	}
+	
 }
